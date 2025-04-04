@@ -515,6 +515,9 @@ class CFGaussianTrainer(GaussianTrainer):
             torch.save(self.gs_render.gaussians.capture(),
                         f"{result_path}/chkpnt/ep{epoch:02d}_init.pth")
 
+            # save ply
+            self.gs_render.gaussians.save_ply(f"{result_path}/point_cloud/ep{epoch:02d}_init.ply")
+
 
 
     def eval_nvs(self, ):
